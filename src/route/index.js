@@ -7,8 +7,8 @@ const router = express.Router()
 
 var header = {
   name: {
-    firstname: 'Andriy',
-    lastname: 'Zeleniy',
+    firstname: 'Ivan',
+    lastname: 'Ivanov',
   },
   position: 'Junior Fullstack JS Developer',
   salary: '600$ per month',
@@ -18,8 +18,8 @@ var header = {
 var footer = {
   social: {
     email: {
-      text: 'Andriy7733@gmail',
-      href: 'mailto:Andriy7733@gmail.com',
+      text: 'IvanIvanov@gmail',
+      href: 'mailto:Ivan_Ivanov@gmail.com',
     },
     phone: {
       text: '+380670000123',
