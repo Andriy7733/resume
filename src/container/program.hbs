@@ -8,124 +8,106 @@
 
     <h1>Excursion:</h1>
 
-    <div>
-        {{#with excursion}}
 
-        <h2>{{name}}</h2>
+    {{#with excursion}}
 
-        <div>
+    <h2>{{name}}</h2>
+
+    {{#with location}}
+    <div>{{city}}</div>
+    <div>{{country}}</div>
+    {{/with}}
+
+    <br>
+    <div>{{date}}</div>
+    <br>
+
+    <div><b>Program:</b></div>
+
+    <ul>
+        {{#each program}}
+        <li>
+            <p><b>{{name}}</b></p>
+            <p>{{type}}</p>
+            <p>{{duration}} days</p>
+            <hr>
+            <br>
+
+            <div>Details:</div>
+            {{#with details}}
+            {{#with museum}}
+
+            <div><b>{{name}}</b></div>
+
+            <br>
+
             {{#with location}}
+            <div>{{address}}</div>
             <div>{{city}}</div>
             <div>{{country}}</div>
             {{/with}}
-        </div>
-        <br>
-        <div>{{date}}</div>
-        <hr>
 
+            <br>
 
-        <div>
-            {{#each program}}
-            <section>
-
-
-                <h3><b>{{name}}</b></h3>
-                <div>{{type}}</div>
-                <div>{{duration}} days</div>
-                <hr>
-                <br>
-
-                <div>
-                    {{#with details}}
-                    {{#with museum}}
-
-                    <div><b>{{name}}</b></div>
-                    <br>
-                    <div>
-                        {{#with location}}
-                        <div>{{address}}</div>
-                        <div>{{city}}</div>
-                        <div>{{country}}</div>
-                        {{/with}}
-                    </div>
-                    <div>
-                        {{#each exhibits}}
-                        <ul>
-                            <li>
-                                <p>{{name}}</p>
-                                <p>{{artist}}</p>
-                                <p>{{description}}</p>
-                                <p>
-                                    {{#if audio_guide}}
-                                    (audio guide)
-                                    {{/if}}
-                                </p>
-                            </li>
-                        </ul>
-                        {{/each}}
-                    </div>
-
-                    {{/with}}
-                </div>
-                <br>
-                <hr>
-                <div>
-                    {{#with guide}}
+            <ul>
+                {{#each exhibits}}
+                <li>
                     <p>{{name}}</p>
-                    <p>{{language}}</p>
-                    <p>{{rating}}</p>
-                    {{/with}}
-                </div>
-                <hr>
-                {{/with}}
+                    <p>{{artist}}</p>
+                    <p>{{description}}</p>
+                    <p>
+                        {{#if audio_guide}}
+                        (audio guide)
+                        {{/if}}
+                    </p>
+                </li>
                 {{/each}}
-            </section>
+            </ul>
 
-            <section>
+            {{/with}}
+            <br>
+            <hr>
+            {{#with guide}}
+            <p>{{name}}</p>
+            <p>{{language}}</p>
+            <p>{{rating}}</p>
+            {{/with}}
+            {{/with}}
 
-                {{#with details}}
-                <div>
-                    {{#with venue}}
+            <p>{{name}}</p>
+            <p>{{type}}</p>
+            <p>{{duration}}</p>
 
-                    <p>{{name}}</p>
-                    <div>
-                        {{#with location}}
-                        <div>{{address}}</div>
-                        <div>{{city}}</div>
-                        <div>{{country}}</div>
-                        {{/with}}
-                    </div>
-                    {{/with}}
-                </div>
+            {{#with details}}
+            {{#with venue}}
 
-                <br>
-                <div>
-                    {{#each performers}}
-                    <p>{{name}}</p>
-                    <p>{{type}}</p>
-                    {{/each}}
-                </div>
+            <div>{{name}}</div>
 
-                <br>
-                <div>
-                    {{#with guide}}
-                    <div>{{name}}</div>
-                    <div>{{language}}</div>
-                    <div>{{rating}}</div>
-                    {{/with}}
-                </div>
+            {{#with location}}
+            <div>{{address}}</div>
+            <div>{{city}}</div>
+            <div>{{country}}</div>
+            {{/with}}
 
+            {{/with}}
+            <ul>
+                {{#each performers}}
+                <li>{{name}}</li>
+                <li>{{type}}</li>
+                {{/each}}
+            </ul>
 
-                {{/with}}
-            </section>
-        </div>
+            {{#with guide}}
+            <div>{{name}}</div>
+            <div>{{language}}</div>
+            <div>{{rating}}</div>
+            {{/with}}
 
-
-
-
-
-        {{/with}}
-    </div>
+            {{/with}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/with}}
 
     {{/with}}
 </div>
