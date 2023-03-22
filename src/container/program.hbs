@@ -30,11 +30,11 @@
             <p><b>{{name}}</b></p>
             <p>{{type}}</p>
             <p>{{duration}} days</p>
-            <hr>
+
             <br>
 
-            <div>Details:</div>
             {{#with details}}
+
             {{#with museum}}
 
             <div><b>{{name}}</b></div>
@@ -66,19 +66,22 @@
 
             {{/with}}
             <br>
-            <hr>
             {{#with guide}}
             <p>{{name}}</p>
             <p>{{language}}</p>
             <p>{{rating}}</p>
             {{/with}}
+
             {{/with}}
+        </li>
+        <li>
 
             <p>{{name}}</p>
             <p>{{type}}</p>
             <p>{{duration}}</p>
 
             {{#with details}}
+
             {{#with venue}}
 
             <div>{{name}}</div>
