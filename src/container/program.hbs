@@ -21,17 +21,18 @@
     <br>
     <div>{{date}}</div>
     <br>
-
+    <hr>
     <div><b>Program:</b></div>
 
     <ul>
         {{#each program}}
         <li>
             <p><b>{{name}}</b></p>
-            <p>{{type}}</p>
-            <p>{{duration}} days</p>
+            <div>{{type}}</div>
+            <div>{{duration}} days</div>
 
             <br>
+            <hr>
 
             {{#with details}}
 
@@ -48,7 +49,7 @@
             {{/with}}
 
             <br>
-
+            <div><b>Exhibits:</b></div>
             <ul>
                 {{#each exhibits}}
                 <li>
@@ -66,26 +67,12 @@
 
             {{/with}}
             <br>
-            <ul>
-                {{#with guide}}
-                <li>{{name}}</li>
-                <li>{{language}}</li>
-                <li>{{rating}}</li>
-                {{/with}}
-            </ul>
 
             {{/with}}
 
-
-            <p>{{name}}</p>
-            <p>{{type}}</p>
-            <p>{{duration}}</p>
-
             {{#with details}}
-
             {{#with venue}}
-
-            <div>{{name}}</div>
+            {{name}}
 
             {{#with location}}
             <div>{{address}}</div>
@@ -100,14 +87,14 @@
                 <li>{{type}}</li>
                 {{/each}}
             </ul>
+            <hr>
 
-            <ul>
-                {{#with guide}}
-                <li>{{name}}</li>
-                <li>{{language}}</li>
-                <li>{{rating}}</li>
-                {{/with}}
-            </ul>
+            {{#with guide}}
+            <div>{{name}}</div>
+            <div>{{language}}</div>
+            <div>{{rating}}</div>
+            {{/with}}
+            <hr>
 
             {{/with}}
         </li>
