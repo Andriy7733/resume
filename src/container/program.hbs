@@ -66,15 +66,16 @@
 
             {{/with}}
             <br>
-            {{#with guide}}
-            <p>{{name}}</p>
-            <p>{{language}}</p>
-            <p>{{rating}}</p>
-            {{/with}}
+            <ul>
+                {{#with guide}}
+                <li>{{name}}</li>
+                <li>{{language}}</li>
+                <li>{{rating}}</li>
+                {{/with}}
+            </ul>
 
             {{/with}}
-        </li>
-        <li>
+
 
             <p>{{name}}</p>
             <p>{{type}}</p>
@@ -100,11 +101,13 @@
                 {{/each}}
             </ul>
 
-            {{#with guide}}
-            <div>{{name}}</div>
-            <div>{{language}}</div>
-            <div>{{rating}}</div>
-            {{/with}}
+            <ul>
+                {{#with guide}}
+                <li>{{name}}</li>
+                <li>{{language}}</li>
+                <li>{{rating}}</li>
+                {{/with}}
+            </ul>
 
             {{/with}}
         </li>
