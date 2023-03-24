@@ -1,0 +1,123 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div>
+    <section>
+        <h1>{{name}}</h1>
+        <p>{{description}}</p>
+        <em>{{price}}</em>
+        <section>{{category}}</section>
+
+        <div>
+            <div><b>Features:</b></div>
+            <ul>
+                {{#with features}}
+
+                <li><b>Processor:</b></li>
+
+                {{#with processor}}
+                <div>{{brand}}</div>
+                <div>{{model}}</div>
+                <div>{{speed}}</div>
+                <div>{{cores}}</div>
+                <div>{{cache}}</div>
+                {{/with}}
+
+                <br>
+
+                <li><b>Memory:</b></li>
+                {{#with memory}}
+                <div>{{type}}</div>
+                <div>{{size}}</div>
+                <div>{{speed}}</div>
+                {{/with}}
+
+                <br>
+
+                <li><b>Storage:</b></li>
+                {{#with storage}}
+                <div>{{type}}</div>
+                <div>{{size}}</div>
+                {{/with}}
+
+                <br>
+
+                <li><b>Display:</b></li>
+                {{#with display}}
+                <div>{{size}}</div>
+                <div>{{resolution}}</div>
+                <div>{{technology}}</div>
+                <div>{{color_space}}</div>
+                <div>{{brightness}}</div>
+                <div>{{refresh_rate}}</div>
+                {{/with}}
+
+                <br>
+                <li><b>Graphics:</b></li>
+                {{#with graphics}}
+                <div>{{brand}}</div>
+                <div>{{model}}</div>
+                <div>{{memory}}</div>
+                {{/with}}
+
+                <br>
+                <li><b>Ports:</b></li>
+
+                {{#each ports}}
+                <div>{{type}}</div>
+                <div>{{count}}</div>
+                <ul>
+                    {{#each features}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                <br>
+                {{/each}}
+
+                <br>
+                <li><b>Battery:</b></li>
+
+                {{#with battery}}
+                <div>{{type}}</div>
+                <div>{{capacity}}</div>
+                <div>{{life}}</div>
+                {{/with}}
+
+                <br>
+                <li><b>{{weight}}</b></li>
+                <br>
+
+                <li><b>Dimensions:</b></li>
+                {{#with dimensions}}
+                <div>{{height}}</div>
+                <div>{{width}}</div>
+                <div>{{depth}}</div>
+                {{/with}}
+
+                <br>
+                <li><b>{{operating_system}}</b></li>
+                <br>
+
+                <li><b>Accessories:</b></li>
+                <br>
+                {{#each accessories}}
+                <div>{{name}}</div>
+                <button type="button" class="btn btn-dark">{{price}}</button>
+                {{/each}}
+
+
+
+                {{/with}}
+            </ul>
+        </div>
+    </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
