@@ -90,34 +90,113 @@
                 {{/each}}
             </div>
 
-            {{/with}}
+
 
         </div>
 
 
-        <div class="col-5">
+        <div class="col-4 mx-5">
             {{#with item}}
             <table class="table">
 
                 <thead>
-                    {{#each head}}
                     <tr>
+                        {{#each head}}
                         <th>{{this}}</th>
+                        {{/each}}
                     </tr>
-                    {{/each}}
+
                 </thead>
                 <tbody>
                     {{#each body}}
                     <tr>
+                        {{#each this}}
                         <td>{{this}}</td>
+                        {{/each}}
                     </tr>
                     {{/each}}
                 </tbody>
             </table>
             {{/with}}
+
+
+            <div class="card my-4">
+                <ul class="list-group">
+                    {{#with param}}
+                    <div class="card-header">{{title}}</div>
+                    {{#each list}}
+                    <li class="list-group-item">{{this}}</li>
+                    {{/each}}
+
+                    {{/with}}
+                </ul>
+            </div>
+
+
+            <div class="alert alert-danger">
+                {{#with alert}}
+                {{#if isError}}
+                {{text}}
+                {{/if}}
+                {{/with}}
+            </div>
+
         </div>
 
+        {{/with}}
+
     </div>
+    <hr>
+
+
+
+    {{#with goodsOtherBlock}}
+    <div class="display-4 text-center py-5">{{title}}</div>
+    <div class="row">
+        {{#each cards}}
+        <div class="col-4">
+            <div class="card">
+                <img src="{{image}}" class="card-img-top">
+                <div class="card-body">
+                    <div class="card-title">
+                        {{title}}
+                    </div>
+                    <p>{{description}}</p>
+
+                    {{#if isHot}}
+                    <div class="badge rounded-pill text-bg-warning">HOT</div>
+                    {{/if}}
+
+                    {{#if isHot}}
+                    <div class="badge rounded-pill text-bg-primary">NEW</div>
+                    {{/if}}
+
+                </div>
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+
+    <div class="row">
+        <div class="col-12">
+            {{#with service}}
+            <div class="card text-bg-success my-5">
+                <div class="card-body text-center">
+                    <h2>{{title}}</h2>
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                    <a class="btn btn-primary" href="{{link}}" role="{{rel}}">{{text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </div>
+    <hr>
 
 
 </main>
