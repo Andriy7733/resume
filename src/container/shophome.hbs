@@ -8,19 +8,28 @@
 
 <main class="p-5">
 
-    <hr>
+    <div class="row">
 
-    {{#with navigation}}
-    <div class="nav">
-        {{#each links}}
-        <div class="nav-item">
-            <a href="{{href}}" class="nav-link">{{text}}</a>
+        {{#with navigation}}
+
+        <div class="col-8">
+            <div>{{Logo}}</div>
         </div>
-        {{/each}}
-    </div>
-    <div class="display-5">{{Logo}}</div>
 
-    {{/with}}
+        <div class="col-4">
+            <div class="nav">
+                {{#each links}}
+                <div class="nav-item">
+                    <a href="{{href}}" class="nav-link">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+
+        {{/with}}
+    </div>
+
 
     <hr>
     <br>
