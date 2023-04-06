@@ -3,27 +3,11 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 --}}
 
-<main class="p-5">
+<main>
+
+    <hr>
+
     <div class="row">
-        {{#with navigation}}
-
-        <div class="col-8">
-            <div>{{Logo}}</div>
-        </div>
-
-        <div class="col-4">
-            <div class="nav">
-                {{#each links}}
-                <div class="nav-item">
-                    <a href="{{href}}" class="nav-link">{{text}}</a>
-                </div>
-                {{/each}}
-            </div>
-        </div>
-        {{/with}}
-
-        <hr>
-
         <div class="col-12">
             <ol class="breadcrumb">
                 {{#each breadcrumb}}
@@ -33,8 +17,8 @@
                 {{/each}}
             </ol>
         </div>
-
     </div>
+
     <div class="row">
         <div class="col-6">
             <div class="card">
@@ -167,7 +151,7 @@
                     <div class="badge rounded-pill text-bg-warning">HOT</div>
                     {{/if}}
 
-                    {{#if isHot}}
+                    {{#if idNew}}
                     <div class="badge rounded-pill text-bg-primary">NEW</div>
                     {{/if}}
 

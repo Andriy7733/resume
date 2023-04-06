@@ -1,0 +1,11 @@
+<footer>
+    <div class="nav nav-tabs my-5">
+        {{#each footer}}
+        <div class="nav-item">
+            {{#each this}}
+            <a href="{{this.link}}" class="nav-link">{{this.text}}</a>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</footer>
