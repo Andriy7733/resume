@@ -109,7 +109,7 @@
                 {{#each footer}}
                 <div class="nav-item">
                     {{#each this}}
-                    <a href="{{this.link}}" class="nav-link">{{this.text}}</a>
+                    <a href="{{this.link}}" class="nav-link {{#if @last}}disabled{{/if}}">{{this.text}}</a>
                     {{/each}}
                 </div>
                 {{/each}}
