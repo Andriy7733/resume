@@ -1,0 +1,52 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div class="p-5">
+
+    <body>
+        <div class="row">
+
+
+            {{#with navigation}}
+            <div class="col-12">
+                <div class="nav">
+                    {{#each links}}
+                    <div class="nav-item">
+                        <a href="{{href}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+
+
+            <nav class="col-12 mt-5">
+                <ol class="breadcrumb">
+                    {{#each breadcrumb}}
+                    <li class="breadcrumb-item">
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ol>
+            </nav>
+
+            <header>
+                <h1>{{header}}</h1>
+            </header>
+
+            <section>
+
+            </section>
+
+        </div>
+    </body>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
