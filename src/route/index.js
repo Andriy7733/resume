@@ -466,95 +466,11 @@ router.get('/person', function (req, res) {
 
 // ================================================================
 
-
-router.get('/program', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('program', {
-    layout: 'basic',
-    program: {
-      excursion: {
-        name: 'Cultural Tour',
-        location: {
-          city: 'Paris',
-          country: 'France',
-        },
-        date: '2023-06-15',
-        program: [
-          {
-            name: 'Museum Visit',
-            type: 'Art',
-            duration: 3,
-            details: {
-              museum: {
-                name: 'The Louvre',
-                location: {
-                  address: 'Rue de Rivoli',
-                  city: 'Paris',
-                  country: 'France',
-                },
-                exhibits: [
-                  {
-                    name: 'Mona Lisa',
-                    artist: 'Leonardo da Vinci',
-                    description: 'Iconic portrait painting',
-                    audio_guide: true,
-                  },
-                  {
-                    name: 'Winged Victory of Samothrace',
-                    artist: null,
-                    description:
-                      'Ancient Greek statue of Nike, the goddess of victory',
-                    audio_guide: true,
-                  },
-                ],
-              },
-              guide: {
-                name: 'Francois',
-                language: 'French',
-                rating: 4.8,
-              },
-            },
-          },
-          {
-            name: 'Cultural Show',
-            type: 'Music and Dance',
-            duration: 2,
-            details: {
-              venue: {
-                name: 'Moulin Rouge',
-                location: {
-                  address: '82 Boulevard de Clichy',
-                  city: 'Paris',
-                  country: 'France',
-                },
-              },
-              performers: [
-                {
-                  name: 'Mireille Mathieu',
-                  type: 'Chanson singer',
-                },
-                {
-                  name: "Ballet de l'Opéra National de Paris",
-                  type: 'Classical ballet company',
-                },
-              ],
-              guide: {
-                name: 'Sophie',
-                language: 'English',
-                rating: 4.6,
-              },
-            },
-          },
-        ],
-      },
-    },
-  })
-  
-router.get('/shoporder', function (req, res) {
+router.get('/shopnews', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('shoporder', {
+  res.render('shopnews', {
     layout: 'shop',
     navigation: {
       links: [
@@ -577,6 +493,42 @@ router.get('/shoporder', function (req, res) {
       ],
       Logo: 'Logo',
     },
+    breadcrumb: [
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'News', url: 'https://www.google.com/' },
+      { name: 'Today', url: 'https://github.com/' },
+      { name: 'About cats', url: null },
+    ],
+
+    newsData: {
+      photo: 'https://picsum.photos/400/200',
+
+      head: {
+        heading: 'About cats',
+        description:
+          "Cats are adorable and beloved pets that have been domesticated for thousands of years. They are known for their independent and playful nature, as well as their agility and hunting skills. With their soft fur, purring, and cuddling, cats make great companions and can bring joy and relaxation to their owners. From domestic short-hairs to exotic breeds, cats come in many shapes, sizes, and colors, each with their own unique personalities. Whether they are napping in a sunny spot or chasing a toy, cats always bring a smile to their owner's faces.",
+      },
+
+      body: [
+        {
+          title: 'Cats have a keen sense of hearing',
+          text: 'With their highly sensitive ears, cats can detect sounds that are too faint for humans to hear, including the ultrasonic calls of rodents and other small prey.',
+        },
+        {
+          title: 'Cats are natural hunters',
+          text: 'Thanks to their sharp claws, quick reflexes, and stealthy movements, cats are excellent hunters. They can catch mice, rats, birds, and other prey with ease.',
+        },
+        {
+          title: 'Cats are independent creatures',
+          text: "Cats are known for their independent nature, and unlike dogs, they don't require constant attention and affection from their owners. They are perfectly content to entertain themselves with toys and explore their surroundings on their own.",
+        },
+        {
+          title: 'Cats have a unique way of communicating',
+          text: 'From meows and purrs to chirps and trills, cats use a variety of sounds to communicate with their owners and other cats. They also use body language, such as tail movements and ear positions, to convey their moods and intentions.',
+        },
+        {
+          title: 'Cats are good for your health',
+          text: 'Studies have shown that owning a cat can have numerous health benefits, including lower stress levels, reduced risk of heart disease and stroke, and improved mental health. Plus, cats make great companions and can provide a source of comfort and emotional support.',
 
     header: 'Оформлення замовлення',
     contacts_data: {
@@ -902,6 +854,42 @@ router.get('/shoporder', function (req, res) {
         },
       ],
     },
+    newsOtherBlock: {
+      title: 'See other news',
+      cards: [
+        {
+          title: 'NASA Launches New Mars Rover',
+          description:
+            "NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and searching for signs of ancient microbial life.",
+          isTop: false,
+          idNew: true,
+        },
+        {
+          title:
+            'GameStop Shares Soar as Reddit Traders Rally',
+          description:
+            'Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title:
+            'New Study Shows Link Between Exercise and Longevity',
+          description:
+            'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title: 'Amazon Expands Grocery Delivery Service',
+          description:
+            'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.',
+          isTop: false,
+          idNew: true,
+        },
+      ],
+    },
+
 
     goodsOtherBlock: {
       title: 'See other products',
@@ -1512,6 +1500,7 @@ router.get('/shoporder', function (req, res) {
       },
     ],
     
+
     service: {
       title: 'Our Services',
       description:
@@ -1523,6 +1512,7 @@ router.get('/shoporder', function (req, res) {
         },
       ],
     },
+    
     footer: [
       [
         {
