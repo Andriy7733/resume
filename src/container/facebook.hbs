@@ -1,0 +1,78 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div>
+    <main>
+        <h1>{{name}}</h1>
+        <hr>
+        <div>
+            {{#each users}}
+            <em>{{id}}</em>
+            <div><b>{{name}}</b></div>
+            <div>{{gender}}</div>
+            <div>{{age}}</div>
+
+            <hr>
+            <br>
+
+
+
+            <section>
+                <ul>
+                    {{#each friends}}
+                    <li>
+                        <div>{{id}}</div>
+                        <div><b>{{name}}</b></div>
+                        <div>{{gender}}</div>
+                        <div>{{age}}</div>
+
+                        <br>
+                        <ul>
+                            {{#each mutual_friends}}
+                            <div>{{id}}</div>
+                            <div><b>{{name}}<b></div>
+                            <div>{{gender}}</div>
+                            <div>{{age}}</div>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    {{/each}}
+                </ul>
+            </section>
+
+
+            <br>
+
+
+            <section>
+                {{#each groups}}
+                <div>{{id}}</div>
+                <div><b>{{name}}</b></div>
+                <p>{{description}}</p>
+                <br>
+                <div>
+                    {{#each members}}
+                    <div>{{id}}</div>
+                    <div><b>{{name}}</b></div>
+                    <div>{{gender}}</div>
+                    <div>{{age}}</div>
+                    {{/each}}
+                </div>
+
+                {{/each}}
+            </section>
+            <hr>
+
+            {{/each}}
+        </div>
+    </main>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
