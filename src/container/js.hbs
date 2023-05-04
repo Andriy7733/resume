@@ -1,0 +1,79 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <section>
+        <h1>{{name}}</h1>
+        <p>{{description}}</p>
+        <div>
+            {{#with history}}
+            <div>{{year}}</div>
+            <strong>{{founder}}</strong>
+            {{/with}}
+        </div>
+        <hr>
+        <div><b>Types:</b></div>
+        <br>
+        <div>
+            {{#each types}}
+            <button type="button" class="btn btn-outline-info">{{this}}</button>
+            {{/each}}
+        </div>
+        <hr>
+        <div><b>Syntax:</b></div>
+        <br>
+        <div>
+            {{#with syntax}}
+            <p>Variables:<span class="badge bg-secondary">{{variables}}</span></p>
+            <p>Functions:<span class="badge bg-secondary">{{functions}}</span></p>
+            <p>Conditionals:<span class="badge bg-secondary">{{conditionals}}</span></p>
+            <p>Loops:<span class="badge bg-secondary">{{loops}}</span></p>
+            <p>Classes:<span class="badge bg-secondary">{{classes}}</span></p>
+            {{/with}}
+        </div>
+        <hr>
+
+        <div><b>Features:</b></div>
+        <br>
+
+        <ul {{#each features}} <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <hr>
+        <div><b>Libraries:<b></div>
+        <br>
+        <div>
+            {{#each libraries}}
+            <button type="button" class="btn btn-outline-success">{{this}}</button>
+            {{/each}}
+        </div>
+        <hr>
+        <div>Tools:</div>
+        <br>
+        <div>
+            {{#each tools}}
+            <button type="button" class="btn btn-danger">{{this}}</button>
+            {{/each}}
+        </div>
+        <hr>
+        <div>Community:</div>
+        <br>
+        <ul>
+            {{#each community}}
+            <li>
+                <button type="button" class="btn btn-light">{{name}}</button>
+                <button type="button" class="btn btn-link">{{type}}</button>
+            </li>
+            {{/each}}
+        </ul>
+
+    </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
