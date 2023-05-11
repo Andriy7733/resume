@@ -45,6 +45,7 @@
                         </div>
                         {{/with}}
                     </div>
+
                     <div class="col-6 my-3">
                         {{#each buttons}}
 
@@ -214,70 +215,39 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-12">
-                        {{#with contacts}}
-                        <div class="card">
-                            <h3 class="m-3">{{title}}</h3>
+                {{#with contacts}}
 
+                <div class="card">
+                    <div class="row">
 
-                            {{#with contactData}}
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="card m-2 p-2">
-                                        {{#with phone}}
-                                        <p>{{title}}</p>
-                                        <div>{{value}}</div>
-                                        {{/with}}
-                                    </div>
-                                </div>
+                        <h3 class="m-3">{{title}}</h3>
 
-                                <div class="col-4">
-                                    <div class="card m-2 p-2">
-                                        {{#with additionalPhone}}
-                                        <p>{{title}}</p>
-                                        <div>{{value}}</div>
-                                        {{/with}}
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="card m-2 p-2">
-                                        {{#with email}}
-                                        <p>{{title}}</p>
-                                        <div>{{value}}</div>
-                                        {{/with}}
-                                    </div>
-                                </div>
+                        {{#each contactData}}
+                        <div class="col-4">
+                            <div class="card m-1 p-1">
+                                <p>{{title}}</p>
+                                <div>{{value}}</div>
+                                {{#with button}}
+                                {{#if isPrimary}}
+                                <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+                                {{/if}}
+                                {{#if isSecondary}}
+                                <a class="btn btn-outline-dark" href="{{link}}" role="button">{{text}}</a>
+                                {{/if}}
+                                {{#if isDanger}}
+                                <a class="btn btn-outline-danger" href="{{link}}" role="button">{{text}}</a>
+                                {{/if}}
+                                {{/with}}
                             </div>
-                            {{/with}}
-
-                            <div class="row m-3">
-                                {{#each buttons}}
-                                <div class="col-1">
-                                    {{#if isPrimary}}
-                                    <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
-                                    {{/if}}
-                                </div>
-                                <div class="col-1">
-                                    {{#if isSecondary}}
-                                    <a class="btn btn-outline-dark" href="{{link}}" role="button">{{text}}</a>
-                                    {{/if}}
-                                </div>
-                                <div class="col-1">
-                                    {{#if isDanger}}
-                                    <a class="btn btn-outline-danger" href="{{link}}" role="button">{{text}}</a>
-                                    {{/if}}
-                                </div>
-
-                                {{/each}}
-
-                            </div>
-                            {{/with}}
-
                         </div>
+
+                        {{/each}}
                     </div>
-                    {{/with}}
+                </div>
+                {{/with}}
+
+
+                {{/with}}
             </section>
 
             <footer class="my-3">

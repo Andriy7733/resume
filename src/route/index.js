@@ -688,7 +688,6 @@ router.get('/web', function (req, res) {
 })
 
 // ================================================================
-
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
